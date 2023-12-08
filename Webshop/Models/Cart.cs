@@ -2,8 +2,7 @@
 {
     public class Cart
     {
-        public int NumberOfItems { get; set; }
-        public decimal TotalAmount { get; set; }
-
+        public List<CartItem> CartItems { get; set; }
+        public decimal Total { get; set; }
     }
 }

@@ -1,0 +1,21 @@
+﻿@model Webshop.Models.Order
+
+@{
+    ViewData["Title"] = "CheckOut2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Sikeres rendelés!</h1>
+
+<h4>Köszönjük a megrendelést!</h4>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Vissza a főoldalra</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

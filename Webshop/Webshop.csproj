@@ -24,7 +24,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Views\Cart\" />
 	  <Folder Include="Views\OrderHandling\" />
 	  <Folder Include="wwwroot\media\index\" />
 	  <Folder Include="wwwroot\media\products\" />
