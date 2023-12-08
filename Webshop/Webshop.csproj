@@ -22,4 +22,11 @@
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
 		<PackageReference Include="PagedList.Mvc" Version="4.5.0" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\Cart\" />
+	  <Folder Include="Views\OrderHandling\" />
+	  <Folder Include="wwwroot\media\index\" />
+	  <Folder Include="wwwroot\media\products\" />
+	</ItemGroup>
 </Project>
