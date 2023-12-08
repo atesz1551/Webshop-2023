@@ -1,4 +1,5 @@
-﻿using Webshop.DAL;
+﻿using Microsoft.EntityFrameworkCore;
+using Webshop.DAL;
 
 namespace Webshop.Models
 {
@@ -6,7 +7,7 @@ namespace Webshop.Models
     {
         public static void SeedDatabase(DataContext context)
         {
-            //context.Database.Migrate();
+            context.Database.Migrate();
 
             if (!context.Products.Any())
             {
