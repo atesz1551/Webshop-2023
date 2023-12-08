@@ -10,7 +10,14 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:DbConnection"]);
 });
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.IsEssential = true;
+});
 var app = builder.Build();
+
 //var connectionString = builder.Configuration.GetConnectionString("WebshopContextConnection") ?? throw new InvalidOperationException("Connection string 'WebshopContextConnection' not found");
 builder.Services.AddControllersWithViews();
 
@@ -24,7 +31,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.MapControllerRoute(
+    name: "products",
+    pattern: "/termekek/{categorySlug?}",
+    defaults: new { controller = "Products", action = "Index" });
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
