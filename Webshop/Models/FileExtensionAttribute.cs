@@ -15,7 +15,7 @@ namespace Webshop.Models
 
                 if (!result)
                 {
-                    return new ValidationResult("Allowed extensions are jpg and png");
+                    return new ValidationResult("Az engedélyezett kiterjesztések a jpg és a png");
                 }
             }
 

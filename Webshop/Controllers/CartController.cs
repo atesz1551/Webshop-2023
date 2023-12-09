@@ -75,7 +75,7 @@ namespace Webshop.Controllers
                 HttpContext.Session.SetJson("Cart", cart);
             }
 
-            TempData["Success"] = "The product has been removed!";
+            TempData["Success"] = "A terméket eltávolították!";
 
             return RedirectToAction("Index");
         }
@@ -95,7 +95,7 @@ namespace Webshop.Controllers
                 HttpContext.Session.SetJson("Cart", cart);
             }
 
-            TempData["Success"] = "The product has been removed!";
+            TempData["Success"] = "A terméket eltávolították!";
 
             return RedirectToAction("Index");
         }
