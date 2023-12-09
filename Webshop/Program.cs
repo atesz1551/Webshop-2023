@@ -49,12 +49,24 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "products",
-    pattern: "/termekek/{categorySlug?}",
+    pattern: "/products/{categorySlug?}",
     defaults: new { controller = "Products", action = "Index" });
+app.MapControllerRoute(
+    name: "Areas",
+    pattern: "{area:exists}/{controller=Products}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
 SeedData.SeedDatabase(context);
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+
 
 app.Run();
