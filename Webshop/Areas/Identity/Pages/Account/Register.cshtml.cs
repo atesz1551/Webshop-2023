@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
-namespace webshop.Areas.Identity.Pages.Account
+namespace Webshop.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
@@ -86,7 +86,7 @@ namespace webshop.Areas.Identity.Pages.Account
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó")]
+            [Display(Name = "Password")]
             public string Password { get; set; }
 
             /// <summary>
@@ -94,8 +94,8 @@ namespace webshop.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó megerősítése")]
-            [Compare("Password", ErrorMessage = "Nem egyeznek a jelszavak.")]
+            [Display(Name = "Confirm password")]
+            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
 

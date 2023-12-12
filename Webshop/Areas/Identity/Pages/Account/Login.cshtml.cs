@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace webshop.Areas.Identity.Pages.Account
+namespace Webshop.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {
@@ -66,7 +66,6 @@ namespace webshop.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
             public string Email { get; set; }
 
             /// <summary>
@@ -75,14 +74,13 @@ namespace webshop.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó")]
             public string Password { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Bejelentkezési adatok megjegyzése")]
+            [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
         }
 
@@ -130,7 +128,7 @@ namespace webshop.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Helytelen bejelentkezési adatok");
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }
             }

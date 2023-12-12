@@ -20,6 +20,8 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 var app = builder.Build();
 
 //var connectionString = builder.Configuration.GetConnectionString("WebshopContextConnection") ?? throw new InvalidOperationException("Connection string 'WebshopContextConnection' not found");
@@ -67,6 +69,6 @@ app.UseEndpoints(endpoints =>
         pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 
-
+app.MapRazorPages();
 
 app.Run();

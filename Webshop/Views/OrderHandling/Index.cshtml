@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Webshop.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Rendelések</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Rendelésszám
+            </th>
+            <th>
+                Név
+            </th>
+            @*            <th>
+            Telefonszám
+            </th>
+            <th>
+            Email
+            </th>*@
+            <th>
+                Szállítási cím
+            </th>
+            @*            <th>
+            Összesen fizetendő
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                @*   <td>
+            @Html.DisplayFor(modelItem => item.CustomerPhone)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerAddress)
+                </td>
+                @*  <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
